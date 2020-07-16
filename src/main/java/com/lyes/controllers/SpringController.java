@@ -26,7 +26,8 @@ public class SpringController {
 	}
 	
 	@PostMapping("/register")
-	public void register(@ModelAttribute("usre") User user) {
-		System.out.println(user.toString());
+	public String register(@ModelAttribute("usre") User user, Model model) {
+		model.addAttribute("user",user);
+		return "succes";
 	}
 }
