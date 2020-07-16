@@ -9,19 +9,26 @@
 <style>
 	label{
 		display:inline-block;
+		width:220px;
+		margin:10px;
+		text-align:left;
+	}
+	button{
+		width:150px;
+		height:50px;
 	}
 </style>
 
 </head>
 <body>
-	<div align="center">
+	<div style="background-color:  #108df4;" align="center">
 		<h2>User registration</h2>
 		<form:form action="register" method="post" modelAttribute="user">
 			<form:label path="name">User name</form:label>
-			<form:input type="text" path="name"/><br/><br/>
+			<form:input value="${user.name}" path="name"/><br/><br/>
 			
 			<form:label path="email">Email</form:label>
-			<form:input type="email" path="email"/><br/><br/>
+			<form:input  path="email"/><br/><br/>
 			
 			<form:label path="password">Password</form:label>
 			<form:input type="password" path="password"/><br/><br/>
@@ -32,9 +39,15 @@
 			<form:label path="birthday">Birth day</form:label>
 			<form:input path="birthday"/><br/><br/>
 			
-			<form:label path="note">Note</form:label>
-			<form:textarea type="text" path="note"/><br/><br/>
+			<form:label path="married">Married</form:label>
+			<form:checkbox  path="married"/><br/><br/>
 			
+			<form:label path="gender">Gender</form:label>
+			<form:radiobutton path="gender" value="Male"/>Male
+			<form:radiobutton path="gender" value="Female"/>Female<br/><br/>
+			
+			<form:label path="note">Note</form:label>
+			<form:textarea path="note"/><br/><br/>
 			
 			<form:button>Register</form:button>
 		</form:form>

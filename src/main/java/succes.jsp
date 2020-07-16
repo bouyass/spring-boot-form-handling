@@ -4,17 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Checking page</title>
+<title>Success page</title>
 </head>
 <body>
-
-	<h2> Confirmer les données entrées </h2>
 	
-	<p> Name: ${ user.name } </p><br/>
-	<p> Name: ${ user.email } </p><br/>
-
-
-	<button> Confirmer </button>
+	the user ${name} with the email ${ email } has been successfulluy registered
+	
+	<a href="/" >Go to home page</a>
 
 </body>
 </html>

@@ -14,10 +14,13 @@ import com.lyes.model.User;
 
 @Controller
 public class SpringController {
+	
+	private List<User> users = new ArrayList<User>();
 
 	@RequestMapping("/")
-	public String home() {
+	public String home(Model model) {
 		System.out.println("Going home ...");
+		model.addAttribute("users",users);
 		return "index";
 	}
 	
@@ -34,8 +37,22 @@ public class SpringController {
 	}
 	
 	@PostMapping("/register")
-	public String register(@ModelAttribute("usre") User user, Model model) {
+	public String register(@ModelAttribute("user") User user, Model model) {
 		model.addAttribute("user",user);
+		return "confirmation";
+	}
+	
+	@RequestMapping("/correction_form")
+	public String correction(User user, Model model) {
+		model.addAttribute("user",user);
+		return "register";
+	}
+	
+	@RequestMapping("confirm_register")
+	public String confirmRegistration(User user, Model model) {
+		users.add(user);
+		model.addAttribute("name",user.getName());
+		model.addAttribute("email",user.getEmail());
 		return "succes";
 	}
 }
