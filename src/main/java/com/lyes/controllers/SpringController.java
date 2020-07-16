@@ -51,6 +51,7 @@ public class SpringController {
 	@RequestMapping("confirm_register")
 	public String confirmRegistration(User user, Model model) {
 		users.add(user);
+		System.out.println("confirm "+user.getName()+" , "+user.getEmail());
 		model.addAttribute("name",user.getName());
 		model.addAttribute("email",user.getEmail());
 		return "succes";

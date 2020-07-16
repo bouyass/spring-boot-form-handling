@@ -22,7 +22,7 @@
 	<p> Name: ${ user.note } </p><br/>
 
 
-	<button onclick="confirm_register"> Confirmer </button>
+	<button onclick="window.location.href='confirm_register'"> Confirmer </button>
 	<a href="correction_form?name=${user.name}&email=${user.email}">Corriger</a>
 
 </div>
