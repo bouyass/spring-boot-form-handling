@@ -16,7 +16,9 @@ import com.lyes.model.User;
 public class SpringController {
 	
 	private List<User> users = new ArrayList<User>();
+	List<String> professions = new ArrayList<String>();
 
+	
 	@RequestMapping("/")
 	public String home(Model model) {
 		System.out.println("Going home ...");
@@ -27,11 +29,10 @@ public class SpringController {
 	@GetMapping("/register_form")
 	public String registerForm(Model model) {
 		User user = new User();
-		List<String> professions = new ArrayList<String>();
-		professions.add("Education");
-		professions.add("Commerçant");
-		professions.add("Artisanat");
 		model.addAttribute("user",user);
+		professions.add("Education");
+		professions.add("Artisant");
+		professions.add("Commerçant");
 		model.addAttribute("professionList",professions);
 		return "register";
 	}
@@ -45,6 +46,10 @@ public class SpringController {
 	@RequestMapping("/correction_form")
 	public String correction(User user, Model model) {
 		model.addAttribute("user",user);
+		professions.add("Education");
+		professions.add("Artisant");
+		professions.add("Commerçant");
+		model.addAttribute("professionList",professions);
 		return "register";
 	}
 	
